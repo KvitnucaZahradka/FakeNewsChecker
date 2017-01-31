@@ -33,7 +33,7 @@ def readPropertiesFile(fileName, valtype):
     """
 
     props = {}
-    f = open(fileName, 'r')
+    f = open(fileName, 'r', encoding='latin-1')
 
     for line in f.readlines():
         if line.startswith('#'):

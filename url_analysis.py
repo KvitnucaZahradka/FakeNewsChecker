@@ -1,16 +1,15 @@
 import pythonwhois  # it's using this http://cryto.net/pythonwhois
 from urllib.error import HTTPError
 from requests.exceptions import HTTPError
-import time
-import random
 import urllib
 import helpful_functions
 import urllib.request
+import socket
+
 
 
 class url_analysis():
 
-    __final_dictionary = None
     __data = None
     __urls = None
     __meta = None
@@ -40,14 +39,14 @@ class url_analysis():
         # NOTE: fix this function tomorrow
         if self.__meta is not None:
             uniq = helpful_functions.uniqify(self.__urls.values())
-            intersection = helpful_functions.intersection(self.__meta, uniq)
+            difference = helpful_functions.set_difference(uniq, self.__meta)
 
-            if intersection is not None:
-                print('intersection is not empty, is of size: ' + str(len(intersection)))
+            if difference is not None:
+                print('difference is not empty, is of size: ' + str(len(difference)))
                 print('we add it to self.__meta, that is of size: ' + str(len(self.__meta)))
 
                 add_to_meta = {}
-                self.__find_url_meta(intersection, add_to_meta)
+                self.__find_url_meta(difference, add_to_meta)
                 helpful_functions.add_dict(self.__meta, add_to_meta)
 
                 print('we added missing urls metadata to self.__meta, now it is of size: ' + str(len(self.__meta)))
@@ -61,19 +60,36 @@ class url_analysis():
 
     # looping through the article ids and adding the outside url features, as calculated from appropriate meta
     def url_analysis(self):
+        self.__open_and_produce_url_meta()
+
+        # looking for creation date
         for key in self.__data.keys():
             url = self.__urls[key]
+            try:
+                year = int(self.__meta[url]['creation_date'][0].year)
+            except (TypeError, KeyError):
+                year = 2000
 
+            # DEPRECATE the original year_bias function
+            # year_bias = self.__year_bias(year)
+
+            # better year_bias calculated by sigmoid_year() function
+            year_bias = self.__sigmoid_year(year)
+            self.__data[key].extend(year_bias)
+
+    # sigmoid year is probably better feature than year bias
+    def __sigmoid_year(self, year):
+        return [helpful_functions.sigmoid(year)]
 
     # this is proxy 0 function, you better should do some clustering will be proxy 1
     # maybe you should implement this as sigmoid function from 1900 ---> 1 and 2017 --> -1, centered at 2000 ???
     def __year_bias(self, year):
         if year < 2000:
-            return 1
+            return [1]
         elif year > 2000:
-            return -1
+            return [-1]
         else:
-            return 0
+            return [0]
 
     def __find_url_meta(self, domains, meta_fake):
         if type(meta_fake) == dict:
@@ -83,7 +99,7 @@ class url_analysis():
                     meta_fake[dom] = pythonwhois.get_whois(dom)
                 except (urllib.request.HTTPError, HTTPError, ConnectionResetError, UnicodeDecodeError):
                     helpful_functions.wait_random_time(45)
-                except KeyError:
+                except (KeyError, socket.gaierror):
                     meta_fake[dom] = None
                 except pythonwhois.shared.WhoisException:
                     meta_fake[dom] = None
@@ -92,6 +108,8 @@ class url_analysis():
 
     # HELPFUL FUNCTIONS
 
+
     # getting data from outside
     def get_data(self):
-        return self.__final_dictionary
+        return self.__data
+

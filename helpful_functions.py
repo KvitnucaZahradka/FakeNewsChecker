@@ -2,6 +2,7 @@ import pickle
 import time
 import os
 import random
+import math
 # opening the file from the function
 
 
@@ -71,6 +72,14 @@ def wait_random_time(maxTime=7):
     time.sleep(tim)
 
 
-def intersection(key1, key2):
-    return set(key1) & set(key2)
+def set_intersection(set_a, set_b):
+    return set(set_a) & set(set_b)
+
+def set_difference(set_a, set_b):
+    return set(set_a) - set(set_b)
+
+
+# sigmoid
+def sigmoid(x, alpha=0.3, shift=2000):
+    return (1 / (1 + math.exp(-alpha*(x - shift))))
 

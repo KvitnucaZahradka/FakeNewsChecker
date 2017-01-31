@@ -1,10 +1,11 @@
-import NLPanalysis
+import nlp_analysis
 import os
 import helpful_functions
 import pandas
 import random
-import Train
+import train
 import url_analysis
+
 
 class text_to_model():
 
@@ -49,7 +50,7 @@ class text_to_model():
             name_of_true_text_dictionaries = self.__data_on_disc(name_of_true_text_dictionaries)
 
             if len(name_of_fake_text_dictionaries) != length_original_fake \
-                    or len(name_of_true_text_dictionaries)!=length_original_true:
+                    or len(name_of_true_text_dictionaries) != length_original_true:
                 print('NOTICE, there is mismatch between what is in your lists and what is on disc')
 
             if name_of_fake_text_dictionaries is not None and name_of_true_text_dictionaries is not None:
@@ -126,17 +127,18 @@ class text_to_model():
         helpful_functions.save_to_file(self.__dataFake,
                                        'dataFake' + helpful_functions.generate_local_time_suffix(), pick=True)
 
+        # ---------------------------------------------------------------------------------------------------
         # nlp part:
         print('starting the NLP calculations')
 
         # NLPanalysis instances
-        nlpTrue = NLPanalysis.NLPanalysis(self.__goldenFake, self.__goldenTrue, self.__dataTrue,
+        nlpTrue = nlp_analysis.nlp_analysis(self.__goldenFake, self.__goldenTrue, self.__dataTrue,
                                            'nlp_true_data_' + helpful_functions.generate_local_time_suffix())
-        nlpFake = NLPanalysis.NLPanalysis(self.__goldenFake, self.__goldenTrue, self.__dataFake,
+        nlpFake = nlp_analysis.nlp_analysis(self.__goldenFake, self.__goldenTrue, self.__dataFake,
                                            'nlp_fake_data_' + helpful_functions.generate_local_time_suffix())
 
         print('starting the nlp of true set')
-        nlpTrue.calculateNLP()
+        nlpTrue.calculate_nlp()
         self.__dataTrue = nlpTrue.get_resulting_dictionary()
         print('the NLPanalysis class saves resulting dictionary as ' +
               nlpTrue.get_name_of_resulting_dictionary_on_disc())
@@ -144,18 +146,45 @@ class text_to_model():
         print('nlp of true set finished')
 
         print('starting nlp of false set')
-        nlpFake.calculateNLP()
+        nlpFake.calculate_nlp()
         self.__dataFake = nlpFake.get_resulting_dictionary()
         print('the NLPanalysis class saves resulting dictionary as ' +
               nlpTrue.get_name_of_resulting_dictionary_on_disc())
 
-        # add the outside nlp features, i.e. calculated by url_analysis
-        urlTrue = url_analysis.url_analysis(self.__dataTrue, self.__urlTrue)
+        # ---------------------------------------------------------------------------------------------------
+        # non-nlp part
+        print('starting the non - NLP calculations')
 
+        # add the outside nlp features, i.e. calculated by url_analysis
+        control_length_true_before = len(self.__dataTrue[list(self.__dataTrue.keys())[0]])
+
+        urlTrue = url_analysis.url_analysis(self.__dataTrue, self.__urlTrue, false=False)
+        urlTrue.url_analysis()
+
+        control_length_true_after = len(self.__dataTrue[list(self.__dataTrue.keys())[0]])
+
+        if (control_length_true_after - control_length_true_before) <= 0:
+            print('CHECK YOUR PIPELINE: control_length_true_after IS SMALLER/EQUAL THAN control_length_true_before')
+
+
+        control_length_fake_before = len(self.__dataFake[list(self.__dataFake.keys())[0]])
+
+        urlFake = url_analysis.url_analysis(self.__dataFake, self.__urlFake, false=True)
+        urlFake.url_analysis()
+
+        control_length_fake_after = len(self.__dataFake[list(self.__dataFake.keys())[0]])
+
+        if (control_length_fake_after - control_length_fake_before) <= 0:
+            print('CHECK YOUR PIPELINE: control_length_fake_after IS SMALLER/EQUAL THAN control_length_fake_before')
+
+        # ---------------------------------------------------------------------------------------------------
+        # model building part part
+        print('starting the model-building part')
 
         if type(name_of_model) == str and name_of_model == 'AdaBoost':
-            print('MODEL NOT ADDED ADD ADD ADD')
-            pass
+            print('building AdaBoost classifier with grid search')
+            model = train.train(self.__dataFake, self.__dataTrue, modelName='AdaBoost')
+            model.trainModel(modelName='AdaBoost')
         else:
             print('required model ' + str(name_of_model) + ' is not implemented')
             print('or wrong type of model name')

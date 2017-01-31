@@ -1,6 +1,6 @@
-
 import numpy as np
 import pandas as pd
+import helpful_functions
 
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.metrics import accuracy_score
@@ -10,11 +10,11 @@ from sklearn.grid_search import GridSearchCV
 from sklearn.cross_validation import train_test_split
 import six.moves.cPickle as cPickle
 
-class Train:
+class train:
 
     # FIELDS
     # models I have already implemented
-    __models = ['AdaBoost']
+    __build_in_models = ['AdaBoost']
     # numeric fake keeps the numeric data for fake news
     __numericFake = {}
 
@@ -22,10 +22,11 @@ class Train:
     __numericTrue = {}
 
     __modelName = ''
+    __model = None
 
     # CONSTRUCTOR
     # at this stage you are picking up the Ada Boost
-    def __init__(self, numericFake, numericTrue, modelName = 'AdaBoost'):
+    def __init__(self, numericFake, numericTrue, modelName='AdaBoost'):
         if (type(numericFake) == dict) and (type(numericTrue) == dict):
 
             ## you add a class true/fake as 1/0
@@ -35,7 +36,7 @@ class Train:
             self.__numericFake = numericFake
             self.__numericTrue = numericTrue
 
-            self.__modelName = modelName
+            self.__modelName = modelName + helpful_functions.generate_local_time_suffix()
         else:
             raise ValueError
 
@@ -70,7 +71,7 @@ class Train:
 
     # ADA-BOOSTed classifier WITH grid search
     def __ada_function_specific(self, data_train, y_train, data_test, y_test, data_valid, y_valid):
-        name = self.__modelName + '_ADA_MODEL'
+        name = self.__modelName
         # Ada-Boost grid search
         param_grid = {"base_estimator__criterion": ["gini", "entropy"],
                           "base_estimator__splitter": ["best", "random"],
@@ -99,30 +100,46 @@ class Train:
     def trainModel(self, modelName):
         if type(modelName) == str:
             if modelName == 'AdaBoost':
+
                 fullDataFrame = self.__createDataFrames()
                 splitData = self.__split_training_testing_and_validation(fullDataFrame)
 
-                ## picking up training, testing and validation
-                trainX = splitData[0].ix[:, 0:8]
-                trainY = splitData[0].ix[:, 9]
+                y_dimensions = splitData[0].shape[1]
 
-                testX = splitData[1].ix[:, 0:8]
-                testY = splitData[1].ix[:, 9]
+                # picking up training, testing and validation
 
-                validationX = splitData[2].ix[:, 0:8]
-                validationY = splitData[2].ix[:, 9]
+                # before: trainX = splitData[0].ix[:, 0:8]
+                # before: trainY = splitData[0].ix[:, 9]
+                trainX = splitData[0].ix[:, 0:(y_dimensions-2)]
+                trainY = splitData[0].ix[:, y_dimensions-1]
+
+                # before: testX = splitData[1].ix[:, 0:8]
+                # before: testY = splitData[1].ix[:, 9]
+                testX = splitData[1].ix[:, 0:(y_dimensions-2)]
+                testY = splitData[1].ix[:, y_dimensions-1]
+
+                # before: validationX = splitData[2].ix[:, 0:8]
+                # before: validationY = splitData[2].ix[:, 9]
+                validationX = splitData[2].ix[:, (y_dimensions-2)]
+                validationY = splitData[2].ix[:, y_dimensions-1]
 
                 print('start grid-search for ada - boost')
-                model = self.__ada_function_specific(trainX, trainY, testX, testY,
-                                                     validationX, validationY)
 
-                print('ada - boost grid search finished')
+                self.__model = self.__ada_function_specific(trainX, trainY, testX, testY, validationX, validationY)
 
+                print('ada - boost grid search finished it is saved on local drive as (note without .pickle): '
+                      + self.__modelName)
+
+                print('model is also stored in local instance of Train class, use method get_model() to retrieve it')
 
             else:
                 print('the requested model ' + modelName + ' is not supported')
         else:
             raise ValueError
+
+    # get model from instance
+    def get_model(self):
+        return self.__model
 
     ## this function predicts
     def predict(self, text):

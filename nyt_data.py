@@ -25,7 +25,7 @@ import feedparser
 import pickle
 
 
-class NytData:
+class nyt_data:
     # FIELDS
     __offset = 'offset=0'
     # you use just 9000 out of 10000 to have some buffer
