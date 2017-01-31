@@ -1,0 +1,357 @@
+INFO:root:Getting started.
+INFO:root:Working on 20161201.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20161201.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Unexpected error: <class 'NameError'>
+INFO:root:Finished.
+INFO:root:Getting started.
+INFO:root:Working on 20130101.
+ERROR:root:Error on 20130101 page ...: <class 'KeyError'>
+ERROR:root:HTTPError on page 1 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=1&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 2 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=2&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 3 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=3&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 4 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=4&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 5 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=5&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 6 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=6&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 7 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=7&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 8 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=8&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 9 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=9&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 10 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=10&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 11 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=11&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 12 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=12&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 13 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=13&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 14 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=14&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 15 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=15&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 16 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=16&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 17 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=17&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 18 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=18&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 19 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=19&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 20 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=20&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 21 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=21&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 22 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=22&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 23 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=23&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 24 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=24&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 25 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=25&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 26 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=26&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:Error on 20130101 page ...: <class 'KeyError'>
+ERROR:root:HTTPError on page 28 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=28&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 29 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=29&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 30 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=30&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 31 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=31&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 32 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=32&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 33 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=33&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 34 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=34&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 35 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=35&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 36 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=36&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 37 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=37&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 38 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=38&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 39 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=39&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 40 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=40&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 41 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=41&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 42 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=42&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 43 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=43&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 44 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=44&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 45 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=45&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 46 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=46&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 47 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=47&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 48 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=48&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 49 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=49&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:Error on 20130101 page ...: <class 'KeyError'>
+ERROR:root:HTTPError on page 51 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=51&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 52 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=52&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 53 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=53&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 54 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=54&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 55 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=55&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 56 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=56&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 57 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=57&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 58 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=58&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 59 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=59&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 60 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=60&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 61 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=61&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 62 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=62&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 63 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=63&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 64 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=64&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 65 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=65&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 66 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=66&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 67 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=67&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 68 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=68&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 69 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=69&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 70 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=70&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 71 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=71&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 72 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=72&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 73 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=73&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 74 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=74&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 75 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=75&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:Error on 20130101 page ...: <class 'KeyError'>
+ERROR:root:HTTPError on page 77 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=77&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 78 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=78&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 79 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=79&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 80 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=80&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 81 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=81&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 82 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=82&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 83 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=83&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 84 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=84&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 85 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=85&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 86 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=86&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 87 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=87&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 88 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=88&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 89 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=89&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 90 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=90&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 91 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=91&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 92 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=92&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 93 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=93&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 94 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=94&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 95 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=95&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 96 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=96&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 97 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=97&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 98 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=98&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 99 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=99&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:HTTPError on page 100 on 20130101 (err no. 429: ) Here's the URL of the call: http://api.nytimes.com/svc/search/v2/articlesearch.json?begin_date=20130101&end_date=20130101&page=100&api-key=923f498f9f764c228a68501cf957355b
+ERROR:root:IOError in 20130101 page 0: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 1: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 2: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 3: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 4: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 5: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 6: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 7: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 8: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 9: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 10: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 11: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 12: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 13: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 14: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 15: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 16: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 17: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 18: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 19: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 20: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 21: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 22: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 23: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 24: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 25: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 26: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 27: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 28: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 29: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 30: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 31: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 32: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 33: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 34: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 35: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 36: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 37: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 38: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 39: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 40: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 41: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 42: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 43: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 44: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 45: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 46: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 47: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 48: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 49: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 50: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 51: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 52: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 53: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 54: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 55: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 56: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 57: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 58: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 59: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 60: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 61: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 62: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 63: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 64: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 65: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 66: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 67: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 68: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 69: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 70: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 71: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 72: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 73: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 74: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 75: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 76: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 77: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 78: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 79: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 80: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 81: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 82: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 83: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 84: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 85: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 86: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 87: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 88: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 89: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 90: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 91: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 92: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 93: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 94: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 95: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 96: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 97: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 98: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 99: 2 No such file or directory
+ERROR:root:IOError in 20130101 page 100: 2 No such file or directory
+INFO:root:Finished.
