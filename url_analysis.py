@@ -1,10 +1,8 @@
-import pythonwhois  # it's using this http://cryto.net/pythonwhois
-from urllib.error import HTTPError
+import python_whois.pythonwhois as pythonwhois  # it's using this http://cryto.net/pythonwhois
 from requests.exceptions import HTTPError
-import urllib
 import helpful_functions
-import urllib.request
 import socket
+import python_whois.pythonwhois.shared as exc
 
 
 
@@ -97,11 +95,11 @@ class url_analysis():
                 try:
                     print(dom)
                     meta_fake[dom] = pythonwhois.get_whois(dom)
-                except (urllib.request.HTTPError, HTTPError, ConnectionResetError, UnicodeDecodeError):
+                except (HTTPError, ConnectionResetError, UnicodeDecodeError):
                     helpful_functions.wait_random_time(45)
                 except (KeyError, socket.gaierror):
                     meta_fake[dom] = None
-                except pythonwhois.shared.WhoisException:
+                except exc.WhoisException:
                     meta_fake[dom] = None
         else:
             raise ValueError

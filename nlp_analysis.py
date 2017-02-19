@@ -1,8 +1,8 @@
-import re, math
+import re,math
 import os
-import textblob.tokenizers  as tt
+import textblob.tokenizers as tt
 import pickle
-from profanity import profanity
+import profanity.profanity as pf
 
 from textblob import TextBlob
 from textstat.textstat import textstat as ts
@@ -58,7 +58,7 @@ class nlp_analysis:
             # finally create the name of final dictionary on disc
             self.__name_of_final_dictionary = name_of_final_dictionary_on_disc + str(self.__fake)
 
-            ## pre-compute the golden vectors
+            # pre-compute the golden vectors
             self.__precompute_golden_vectors()
 
         else:
@@ -106,6 +106,9 @@ class nlp_analysis:
     # this function cleans up the fake text
     def __clean_text(self, text):
         if self.__fake:
+
+    # function calculates the properties of self.__dictionary, saves the result on disc back
+    # and adds the name of user function to funcUsed list and save it on local drive
             text = text.replace('\n', ' ')
             text = text.split('.')
             del (text[-1])
@@ -118,18 +121,10 @@ class nlp_analysis:
     # create an empty dictionary of structure dic = {article_id: []}
     def __create_empty_dictionary(self):
         self.__resulting_dictionary = {key: [] for key in self.__dictionary.keys()}
-
-    # function calculates the properties of self.__dictionary, saves the result on disc back
-    # and adds the name of user function to funcUsed list and save it on local drive
     def __calculate_fun_results(self, fun, key):
         # for key in self.__dictionary.keys():
         self.__resulting_dictionary[key].extend(fun(self.__dictionary[key]))
 
-        # save the resultingDictionary to disc
-        self.__save_to_file(self.__resulting_dictionary, self.__name_of_final_dictionary)
-
-    # -----------------------------------------------------------------------------------------------------------------
-    # FUNCTIONS FOR NLP. CALCULATIONS
 
     # function that tokenizes the text
     def __tokenize_text(self, text):
@@ -178,7 +173,7 @@ class nlp_analysis:
         length = float(len(self.__tokenized_text))
         prof = 0
         for word in self.__tokenized_text:
-            if profanity.contains_profanity(word):
+            if pf.contains_profanity(word):
                 prof += 1
         return [prof, prof/length]
 
@@ -247,9 +242,9 @@ class nlp_analysis:
         m2 = sum([freq ** 2 for freq in token_counter.values()])
 
         i = (m1 * m1) / (m2 - m1)
-        k = 1 / i * 10000
+        #k = 1 / i * 10000
 
-        return k, i
+        return [i]
 
     # -----------------------------------------------------------------------------------------------------------------
     # CLEANING THE FAKE TEXT
@@ -271,12 +266,14 @@ class nlp_analysis:
     def calculate_nlp(self):
         # putting the list of functions by hand, that you want to apply:
         list_of_functions = [self.__check_upper_case_words_and_density,
-                           self.__readability_of_text, self.__calculate_quest_and_ex_and_density,
-                           self.__vulgar_and_density, partial(self.__calculate_avg_cosine_sim, True),
-                           partial(self.__calculate_avg_cosine_sim, False), self.__get_yules]
+                           self.__readability_of_text, self.__polarity_and_subjectivity,
+                        self.__calculate_quest_and_ex_and_density, self.__vulgar_and_density,
+                        partial(self.__calculate_avg_cosine_sim, True), partial(self.__calculate_avg_cosine_sim, False),
+                             self.__get_yules]
 
         # loop through the text, for each text ---> tokenize the text ---> apply functions ---> save result to final
         # dictionary and continue
+        counter = 0
         for key in self.__dictionary.keys():
             text = self.__dictionary[key]
 
@@ -286,8 +283,10 @@ class nlp_analysis:
             for fun in list_of_functions:
                 self.__calculate_fun_results(fun, key)
 
-        # add the used function to 'usedFunctionNames' list and save it on local drive
-        # self.__saveToFile([fun.__name__ for fun in listOfFunctions], 'alreadyUsedFunctionsNames' + str(self.__fake))
+            # save the resultingDictionary to disc
+            print('saving, number of dictionary key is: ' + str(counter))
+            self.__save_to_file(self.__resulting_dictionary, self.__name_of_final_dictionary)
+            counter += 1
 
 
 

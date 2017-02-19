@@ -26,8 +26,6 @@ def add_dict(final, temp):
     final.update(z)
 
 # find unique members in given sequence
-
-
 def uniqify(seq):
 
     # Not order preserving

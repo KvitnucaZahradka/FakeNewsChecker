@@ -4,6 +4,7 @@ import helpful_functions
 
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import f1_score
 from sklearn.grid_search import GridSearchCV
@@ -16,10 +17,10 @@ class train:
     # models I have already implemented
     __build_in_models = ['AdaBoost']
     # numeric fake keeps the numeric data for fake news
-    __numericFake = {}
+    __numericFake = None
 
     # numeric true keeps the numeric data for true news
-    __numericTrue = {}
+    __numericTrue = None
 
     __modelName = ''
     __model = None
@@ -28,6 +29,8 @@ class train:
     # at this stage you are picking up the Ada Boost
     def __init__(self, numericFake, numericTrue, modelName='AdaBoost'):
         if (type(numericFake) == dict) and (type(numericTrue) == dict):
+            self.__numericFake = {}
+            self.__numericTrue = {}
 
             ## you add a class true/fake as 1/0
             self.__addClassOfNewsToData(numericFake, fake=True)
@@ -77,13 +80,16 @@ class train:
                           "base_estimator__splitter": ["best", "random"],
                           "n_estimators": [150]}
 
-        DTC = DecisionTreeClassifier(random_state=11, max_features="auto", class_weight="auto", max_depth=None)
-        ABC = AdaBoostClassifier(base_estimator=DTC, n_estimators=150,
-                                     learning_rate=1.5,
-                                     algorithm="SAMME")
+        # DTC = DecisionTreeClassifier(random_state=11, max_features="auto", class_weight="auto", max_depth=None)
 
-        grid_search_ABC = GridSearchCV(ABC, param_grid=param_grid, scoring='accuracy', n_jobs=-1)
-        griddi = grid_search_ABC.fit(data_train, y_train)
+        # grid_search_ABC = GridSearchCV(ABC, param_grid=param_grid, scoring='f1', n_jobs=-1)
+        # griddi = grid_search_ABC.fit(data_train, y_train)
+
+        # try withou base classifier
+        ABC = AdaBoostClassifier(n_estimators=150, learning_rate=1.5, algorithm="SAMME")
+
+        ABC.fit(data_train, y_train)
+        griddi = ABC
 
         # Save the grid searched model as the "name".pkl
         print('saving the model as: ' + name + '.pkl')
@@ -95,6 +101,10 @@ class train:
                 str(accuracy_score(y_test, griddi.predict(data_test))))
         print("Validation set accuracy score for the model " + name + " is " + \
                   str(accuracy_score(y_valid, griddi.predict(data_valid))))
+
+        print("Validation set F1 score for the model " + name + " is " + \
+                  str(f1_score(y_valid, griddi.predict(data_valid))))
+
         return griddi
 
     def trainModel(self, modelName):
@@ -113,6 +123,12 @@ class train:
                 trainX = splitData[0].ix[:, 0:(y_dimensions-2)]
                 trainY = splitData[0].ix[:, y_dimensions-1]
 
+                print('number of trainX features is: ' + str(trainX.shape))
+                print('print first row in trainX ')
+                print(trainX.ix[0, 0:(y_dimensions-2)])
+
+                print('shape of trainY is: ' + str(trainY.shape))
+
                 # before: testX = splitData[1].ix[:, 0:8]
                 # before: testY = splitData[1].ix[:, 9]
                 testX = splitData[1].ix[:, 0:(y_dimensions-2)]
@@ -120,7 +136,7 @@ class train:
 
                 # before: validationX = splitData[2].ix[:, 0:8]
                 # before: validationY = splitData[2].ix[:, 9]
-                validationX = splitData[2].ix[:, (y_dimensions-2)]
+                validationX = splitData[2].ix[:, 0:(y_dimensions-2)]
                 validationY = splitData[2].ix[:, y_dimensions-1]
 
                 print('start grid-search for ada - boost')

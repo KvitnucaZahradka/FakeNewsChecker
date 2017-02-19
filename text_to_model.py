@@ -1,7 +1,6 @@
 import nlp_analysis
 import os
 import helpful_functions
-import pandas
 import random
 import train
 import url_analysis
@@ -19,14 +18,14 @@ class text_to_model():
                    'theaustralian.com.au', 'thesaturdaypaper.com.au', 'reddit.com', 'Cnn.com', 'Bbc.co.uk', 'Weather.com',
                    'News.yahoo.com', 'Huffingtonpost.com','Forbes.com', 'Foxnews.com', 'news.google.com' ,
                    'Shutterstock.com', 'Timesofindia.indiatimes.com', 'Bloomberg.com', 'Reuters.com', 'Wunderground.com',
-                   'Money.cnn.com', 'Indianexpress.com', 'Nbcnews.com', 'Latimes.com', 'cnbc.com', 'cbsnews.com',
+                   'Money.cnn.com', 'Nbcnews.com', 'Latimes.com', 'cnbc.com', 'cbsnews.com',
                    'vox.com', 'Abcnews.go.com', 'Nypost.com', 'Theatlantic.com', 'Chicagotribune.com', 'Chinadaily.com.cn'
                    ,'Hollywoodreporter.com', 'Sfgate.com', 'Usnews.com', 'Economist.com', 'Aljazeera.com', 'Fortune.com',
                    'Newsnow.co.uk', 'Variety.com', 'Euronews.com', 'Washingtontimes.com', 'Bostonglobe.com', 'Newsweek.com'
                    ]
 
     # FIELDS
-    __dataFake = {}
+    __dataFake = None
     __dataTrue = {}
 
     __goldenFake = {}
@@ -74,86 +73,138 @@ class text_to_model():
         # NOTE, the following has to be fixed in better way
         self.__urlTrue = self.__create_true_urls()
 
-    def create_model(self, name_of_model='AdaBoost'):
+    # NOTE: fix HARDCODED part of this function
+    def create_model(self, read_from_disc, name_of_model='AdaBoost'):
 
-        # shuffle before split
-        data_fake_keys = random.shuffle(self.__dataFake.keys())
-        data_true_keys = random.shuffle(self.__dataTrue.keys())
+        if read_from_disc:
+            # NOTICE: CHANGE THIS FUNCTION, it is hard-coded
 
-        self.__dataFake = {key: self.__dataFake[key] for key in data_fake_keys}
-        self.__dataTrue = {key: self.__dataTrue[key] for key in data_true_keys}
+            # shuffle before split
+            data_fake_keys = list(self.__dataFake.keys())
+            data_true_keys = list(self.__dataTrue.keys())
 
-        # find golden true and golden fake vectors
-        # golden vectors are defined to be 20 percent of each dataFake and dataTrue
-        len_golden_fake = int(0.2 * len(self.__dataFake))
-        len_golden_true = int(0.2 * len(self.__dataTrue))
+            random.shuffle(data_fake_keys)
+            random.shuffle(data_true_keys)
 
-        # fake data split
-        data_fake_gold_vector_keys = list(self.__dataFake.keys())[0:len_golden_fake]
-        data_fake_calculation_keys = list(self.__dataFake.keys())[len_golden_fake:len(self.__dataFake)]
+            self.__dataFake = {key: self.__dataFake[key] for key in data_fake_keys}
+            self.__dataTrue = {key: self.__dataTrue[key] for key in data_true_keys}
 
-        # true data split
-        data_true_gold_vector_keys = list(self.__dataTrue.keys())[0:len_golden_true]
-        data_true_calculation_keys = list(self.__dataTrue.keys())[len_golden_true:len(self.__dataTrue)]
+            # find golden true and golden fake vectors
+            # golden vectors are defined to be 20 percent of each dataFake and dataTrue
+            len_golden_fake = int(0.2 * len(self.__dataFake))
+            len_golden_true = int(0.2 * len(self.__dataTrue))
 
-        # shuffle dataFake, dataTrue, goldenFake, goldenTrue
-        random.shuffle(data_fake_gold_vector_keys)
-        random.shuffle(data_fake_calculation_keys)
+            # fake data split
+            data_fake_gold_vector_keys = list(self.__dataFake.keys())[0:len_golden_fake]
+            data_fake_calculation_keys = list(self.__dataFake.keys())[len_golden_fake:len(self.__dataFake)]
 
-        random.shuffle(data_true_gold_vector_keys)
-        random.shuffle(data_true_calculation_keys)
+            # true data split
+            data_true_gold_vector_keys = list(self.__dataTrue.keys())[0:len_golden_true]
+            data_true_calculation_keys = list(self.__dataTrue.keys())[len_golden_true:len(self.__dataTrue)]
 
-        # splitting the data to goldenTrue, goldenFake, dataTrue, dataFake and cutting related urlFake, urlTrue
-        self.__goldenFake = {key: self.__dataFake[key] for key in data_fake_gold_vector_keys}
-        self.__goldenTrue = {key: self.__dataTrue[key] for key in data_true_gold_vector_keys}
+            # shuffle dataFake, dataTrue, goldenFake, goldenTrue
+            random.shuffle(data_fake_gold_vector_keys)
+            random.shuffle(data_fake_calculation_keys)
 
-        self.__dataFake = {key: self.__dataFake[key] for key in data_fake_calculation_keys}
-        self.__dataTrue = {key: self.__dataTrue[key] for key in data_true_calculation_keys}
+            random.shuffle(data_true_gold_vector_keys)
+            random.shuffle(data_true_calculation_keys)
 
-        self.__urlFake = {key: self.__urlFake[key] for key in data_fake_calculation_keys}
-        self.__urlTrue = {key: self.__urlTrue[key] for key in data_true_calculation_keys}
+            # splitting the data to goldenTrue, goldenFake, dataTrue, dataFake and cutting related urlFake, urlTrue
+            self.__goldenFake = {key: self.__dataFake[key] for key in data_fake_gold_vector_keys}
+            self.__goldenTrue = {key: self.__dataTrue[key] for key in data_true_gold_vector_keys}
 
-        # save goldenFake, goldenTrue
-        print('saving data: goldenTrue, goldenFake, dataTrue, dataFake')
-        helpful_functions.save_to_file(self.__goldenFake,
+            self.__dataFake = {key: self.__dataFake[key] for key in data_fake_calculation_keys}
+            self.__dataTrue = {key: self.__dataTrue[key] for key in data_true_calculation_keys}
+
+            self.__urlFake = {key: self.__urlFake[key] for key in data_fake_calculation_keys}
+            self.__urlTrue = {key: self.__urlTrue[key] for key in data_true_calculation_keys}
+
+            # reading data fake instead of calculating them in nlp-part
+            self.__dataFake = helpful_functions.safely_open('nlp_fake_data_2017_2_4_19_40_18True', True)
+            self.__dataTrue = helpful_functions.safely_open('nlp_true_data_2017_2_4_19_35_47False', True)
+
+        else:
+            # shuffle before split
+            data_fake_keys = list(self.__dataFake.keys())
+            data_true_keys = list(self.__dataTrue.keys())
+
+            random.shuffle(data_fake_keys)
+            random.shuffle(data_true_keys)
+
+            self.__dataFake = {key: self.__dataFake[key] for key in data_fake_keys}
+            self.__dataTrue = {key: self.__dataTrue[key] for key in data_true_keys}
+
+            # find golden true and golden fake vectors
+            # golden vectors are defined to be 20 percent of each dataFake and dataTrue
+            len_golden_fake = int(0.2 * len(self.__dataFake))
+            len_golden_true = int(0.2 * len(self.__dataTrue))
+
+            # fake data split
+            data_fake_gold_vector_keys = list(self.__dataFake.keys())[0:len_golden_fake]
+            data_fake_calculation_keys = list(self.__dataFake.keys())[len_golden_fake:len(self.__dataFake)]
+
+            # true data split
+            data_true_gold_vector_keys = list(self.__dataTrue.keys())[0:len_golden_true]
+            data_true_calculation_keys = list(self.__dataTrue.keys())[len_golden_true:len(self.__dataTrue)]
+
+            # shuffle dataFake, dataTrue, goldenFake, goldenTrue
+            random.shuffle(data_fake_gold_vector_keys)
+            random.shuffle(data_fake_calculation_keys)
+
+            random.shuffle(data_true_gold_vector_keys)
+            random.shuffle(data_true_calculation_keys)
+
+            # splitting the data to goldenTrue, goldenFake, dataTrue, dataFake and cutting related urlFake, urlTrue
+            self.__goldenFake = {key: self.__dataFake[key] for key in data_fake_gold_vector_keys}
+            self.__goldenTrue = {key: self.__dataTrue[key] for key in data_true_gold_vector_keys}
+
+            self.__dataFake = {key: self.__dataFake[key] for key in data_fake_calculation_keys}
+            self.__dataTrue = {key: self.__dataTrue[key] for key in data_true_calculation_keys}
+
+            self.__urlFake = {key: self.__urlFake[key] for key in data_fake_calculation_keys}
+            self.__urlTrue = {key: self.__urlTrue[key] for key in data_true_calculation_keys}
+
+            # save goldenFake, goldenTrue
+            print('saving data: goldenTrue, goldenFake, dataTrue, dataFake')
+            helpful_functions.save_to_file(self.__goldenFake,
                                        'goldenFake' + helpful_functions.generate_local_time_suffix(), pick=True)
 
-        helpful_functions.save_to_file(self.__goldenTrue,
+            helpful_functions.save_to_file(self.__goldenTrue,
                                        'goldenTrue' + helpful_functions.generate_local_time_suffix(), pick=True)
 
-        # save the dataTrue and dataFake on disc
-        helpful_functions.save_to_file(self.__dataTrue,
+            # save the dataTrue and dataFake on disc
+            helpful_functions.save_to_file(self.__dataTrue,
                                        'dataTrue' + helpful_functions.generate_local_time_suffix(), pick=True)
-        helpful_functions.save_to_file(self.__dataFake,
+            helpful_functions.save_to_file(self.__dataFake,
                                        'dataFake' + helpful_functions.generate_local_time_suffix(), pick=True)
 
-        # ---------------------------------------------------------------------------------------------------
-        # nlp part:
-        print('starting the NLP calculations')
+            # ---------------------------------------------------------------------------------------------------
+            # nlp part:
+            print('starting the NLP calculations')
+            # nlp analysis instances
+            nlpTrue = nlp_analysis.nlp_analysis(self.__goldenFake, self.__goldenTrue, self.__dataTrue,
+                                           'nlp_true_data_' + helpful_functions.generate_local_time_suffix(), fake=False)
+            nlpFake = nlp_analysis.nlp_analysis(self.__goldenFake, self.__goldenTrue, self.__dataFake,
+                                           'nlp_fake_data_' + helpful_functions.generate_local_time_suffix(), fake=True)
 
-        # NLPanalysis instances
-        nlpTrue = nlp_analysis.nlp_analysis(self.__goldenFake, self.__goldenTrue, self.__dataTrue,
-                                           'nlp_true_data_' + helpful_functions.generate_local_time_suffix())
-        nlpFake = nlp_analysis.nlp_analysis(self.__goldenFake, self.__goldenTrue, self.__dataFake,
-                                           'nlp_fake_data_' + helpful_functions.generate_local_time_suffix())
+            print('starting the nlp of true set')
+            nlpTrue.calculate_nlp()
+            self.__dataTrue = nlpTrue.get_resulting_dictionary()
+            print('the NLPanalysis class saves resulting dictionary as ' +
+                nlpTrue.get_name_of_resulting_dictionary_on_disc())
 
-        print('starting the nlp of true set')
-        nlpTrue.calculate_nlp()
-        self.__dataTrue = nlpTrue.get_resulting_dictionary()
-        print('the NLPanalysis class saves resulting dictionary as ' +
-              nlpTrue.get_name_of_resulting_dictionary_on_disc())
+            print('nlp of true set finished')
 
-        print('nlp of true set finished')
-
-        print('starting nlp of false set')
-        nlpFake.calculate_nlp()
-        self.__dataFake = nlpFake.get_resulting_dictionary()
-        print('the NLPanalysis class saves resulting dictionary as ' +
-              nlpTrue.get_name_of_resulting_dictionary_on_disc())
+            print('starting nlp of false set')
+            nlpFake.calculate_nlp()
+            self.__dataFake = nlpFake.get_resulting_dictionary()
+            print('the NLPanalysis class saves resulting dictionary as ' +
+                  nlpTrue.get_name_of_resulting_dictionary_on_disc())
 
         # ---------------------------------------------------------------------------------------------------
         # non-nlp part
         print('starting the non - NLP calculations')
+        print(self.__dataTrue[list(self.__dataTrue.keys())[0]])
 
         # add the outside nlp features, i.e. calculated by url_analysis
         control_length_true_before = len(self.__dataTrue[list(self.__dataTrue.keys())[0]])
@@ -163,6 +214,12 @@ class text_to_model():
 
         control_length_true_after = len(self.__dataTrue[list(self.__dataTrue.keys())[0]])
 
+        print(self.__dataTrue[list(self.__dataTrue.keys())[0]])
+
+        print('............NOTICE NOTICE')
+        print('control length before was ' + str(control_length_true_before))
+        print('control length after was ' + str(control_length_true_after))
+        print('............NOTICE NOTICE')
         if (control_length_true_after - control_length_true_before) <= 0:
             print('CHECK YOUR PIPELINE: control_length_true_after IS SMALLER/EQUAL THAN control_length_true_before')
 
@@ -183,6 +240,7 @@ class text_to_model():
 
         if type(name_of_model) == str and name_of_model == 'AdaBoost':
             print('building AdaBoost classifier with grid search')
+
             model = train.train(self.__dataFake, self.__dataTrue, modelName='AdaBoost')
             model.trainModel(modelName='AdaBoost')
         else:
@@ -202,13 +260,15 @@ class text_to_model():
     def __random_choice(self):
         return random.randint(0, len(self.__good_urls) - 1)
 
+    #### NOTE THIS IS NOT GENERIC FOR THE FAKE BRANCH, works only for one member FIX FIX FIX
     def __join_raw_data(self, names_to_join, fake):
         if fake:
             for name in names_to_join:
                 temp_dict = helpful_functions.safely_open(name, pick=True)
-                helpful_functions.add_dict(self.__dataFake, temp_dict)
-            # creates the fake data dictionary
-            self.__dataFake = self.__create_dictionary(self.__dataFake, 'text')
+                # helpful_functions.add_dict(self.__dataFake, temp_dict)
+                # creates the fake data dictionary
+                # self.__dataFake = self.__create_dictionary(self.__dataFake, 'text')
+                self.__dataFake = temp_dict
         else:
             for name in names_to_join:
                 temp_dict = helpful_functions.safely_open(name, pick=True)
